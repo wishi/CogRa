@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<block>
+	<name>IEEE 802.15.4 Chips To Symbols</name>
+	<key>cogra_chips_to_symbols_bi</key>
+	<category>cogra</category>
+	<import>import cogra</import>
+	<make>cogra.chips_to_symbols_bi()</make>
+	<sink>
+		<name>in</name>
+		<type>int</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>byte</type>
+	</source>
+	<doc>
+		Map a stream of chips (unpacked integers) to a stream of unsigned bytes
+		input: stream of int; output: stream of unsigned char
+	</doc>
+</block>

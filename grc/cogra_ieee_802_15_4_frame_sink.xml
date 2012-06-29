@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<block>
+	<name>IEEE 802.15.4 Frame Sink</name>
+	<key>cogra_ieee_802_15_4_frame_sink</key>
+	<category>cogra</category>
+	<import>from cogra import ieee_802_15_4_pktget</import>
+	<make>ieee_802_15_4_pktget.ieee802_15_4_demod_pkts()</make>
+
+	<sink>
+		<name>in</name>
+		<type>float</type>
+	</sink>
+	<doc>IEEE 802.15.4 Packet Sink with Chips To Symbols Mapping</doc>
+</block>

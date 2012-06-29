@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<block>
+	<name>IEEE 802.15.4 Packet Source</name>
+	<key>ieee_802_15_4_pktgen</key>
+	<category>cogra</category>
+	<import>from cogra import ieee_802_15_4_pktgen</import>
+	<make>ieee_802_15_4_pktgen.ieee802_15_4_mod_pkts($msg)</make>
+
+	<param>
+		<name>Sequence Number</name>
+		<key>seqNr</key>
+		<value>0xe5</value>
+		<type>string</type>
+	</param>
+
+	<param>
+		<name>Address Info</name>
+		<key>addressInfo</key>
+		<value>struct.pack("HHHH", 0xFFFF, 0xFFFF, 0x10, 0x10)</value>
+		<type>string</type>
+	</param>
+
+	<param>
+		<name>Payload</name>
+		<key>payload</key>
+		<value>AAAAA</value>
+		<type>string</type>
+	</param>
+
+	<param>
+		<name>Pad for USRP</name>
+		<key>pad</key>
+		<value>False</value>
+		<type>bool</type>
+	</param>
+
+	<param>
+		<name>EOF</name>
+		<key>eof</key>
+		<value>False</value>
+		<type>bool</type>
+	</param>
+	
+	<source>
+		<name>out</name>
+		<type>complex</type>
+	</source>
+	<doc>
+		Based on gr_802_15_4 this generates an IEEE 802.15.4 packet including PHY
+		and MAC Sublayer.
+
+		FCF: 2 bytes defining the type of frame. Type: String
+
+		SeqNr: 1 byte sequence number. Type: Byte
+
+		Address Info: 0 to 20 bytes of address information. Type: String
+
+		Payload: The payload of the packet. The maximal size of the message
+		can not be larger than 128. Type: String
+
+		Pad for usrp: If we should add 0s at the end to pad for the USRP. Type:
+		Boolean.
+
+		Preamble-Length: Length of the preambble. Currently ignored. Type preambleLength: int
+
+		SFD: Start of frame describtor. This is by default set to the IEEE
+		802.15.4 standard,
+		but can be changed if required. Type: byte
+	</doc>
+</block>
+

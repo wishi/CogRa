@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<block>
+	<name>QPSK Modulator</name>
+	<key>cogra_qpsk</key>
+	<category>cogra</category>
+	<import>import cogra</import>
+	<make>cogra.qpsk()</make>
+	<sink>
+		<name>in</name>
+		<type>complex</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>complex</type>
+	</source>
+	<doc>
+		Generates a QPSK signal from a +/- 1 float stream.
+
+		For each two
+		input symbols we output 4 complex symbols with a half-sine
+		pulse shape.
+		The sample-rate for this block therefore has to
+		correspond
+		with the
+		symbol-rate.
+	</doc>
+</block>

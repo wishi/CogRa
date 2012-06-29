@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<block>
+	<name>Gaussian Filter</name>
+	<key>gaus_filter_cc</key>
+	<category>cogra</category>
+	<import>from cogra import gaus_filter_cc</import>
+	<make>gaus_filter_cc.gauss_filter(
+		samples_per_symbol=$samples_per_symbol,
+		sensitivity=$sensitivity,
+		bt=$bt
+		)
+	</make>
+	<param>
+		<name>Samples/Symbol</name>
+		<key>samples_per_symbol</key>
+		<value>2</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Sensitivity</name>
+		<key>sensitivity</key>
+		<value>1.0</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>BT</name>
+		<key>bt</key>
+		<value>0.35</value>
+		<type>real</type>
+	</param>
+	<sink>
+		<name>in</name>
+		<type>float</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>float</type>
+	</source>
+</block>
+
